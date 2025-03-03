@@ -1,13 +1,14 @@
 import ProjectDescription
 
+let scheme: Scheme = .scheme(
+    name: "TuistDemoApp",
+    buildAction: .buildAction(targets: ["TuistDemoApp"]),
+    testAction: .targets([.testableTarget(target: "TuistDemoAppTests")])
+)
+
 let project = Project(
     name: "TuistDemoApp",
-    // Necessary flag to resolve issue
-//    settings: .settings(
-//        base:[
-//            "ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS":true
-//        ]
-//    ),
+    options: .options(automaticSchemesOptions: .disabled),
     targets: [
         .target(
             name: "TuistDemoApp",
@@ -38,5 +39,6 @@ let project = Project(
             resources: [],
             dependencies: [.target(name: "TuistDemoApp")]
         ),
-    ]
+    ],
+    schemes: [scheme]
 )
