@@ -1,14 +1,13 @@
 import ProjectDescription
 
-let scheme: Scheme = .scheme(
-    name: "TuistDemoApp",
-    buildAction: .buildAction(targets: ["TuistDemoApp"]),
-    testAction: .targets([.testableTarget(target: "TuistDemoAppTests")])
-)
-
 let project = Project(
     name: "TuistDemoApp",
-    options: .options(automaticSchemesOptions: .disabled),
+    options: .options(
+        disableSynthesizedResourceAccessors: true
+    ),
+    settings: .settings(base: [
+        "ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": true
+    ]),
     targets: [
         .target(
             name: "TuistDemoApp",
@@ -23,8 +22,8 @@ let project = Project(
                     ]
                 ]
             ),
-            sources: ["App/Sources/**"],
-            resources: ["App/Resources/**"],
+            sources: ["Sources/**"],
+            resources: ["Resources/**"],
             dependencies: [
                 .external(name: "TuistDemoFramework")
             ]
@@ -35,10 +34,9 @@ let project = Project(
             product: .unitTests,
             bundleId: "io.tuist.AppTests",
             infoPlist: .default,
-            sources: ["App/Tests/**"],
+            sources: ["Tests/**"],
             resources: [],
             dependencies: [.target(name: "TuistDemoApp")]
         ),
-    ],
-    schemes: [scheme]
+    ]
 )

@@ -17,7 +17,11 @@ let package = Package(
     .target(
       name: "TuistDemoFramework",
       dependencies: [],
-      path: "Framework"
+      path: "Framework",
+      sources: ["Sources"],
+      resources: [
+        .process("Resources")
+      ]
     )
   ]
 )
