@@ -11,8 +11,8 @@ public struct ImageHolderView: View {
     public init() { }
 
     public var body: some View {
-//        Image("happyCoffee")
-        Image(.happyCoffee)
+//        Image(.happyCoffee)
+        Image("happyCoffee")
     }
 }
 
