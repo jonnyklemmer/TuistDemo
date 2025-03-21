@@ -2,12 +2,6 @@ import ProjectDescription
 
 let project = Project(
     name: "TuistDemoApp",
-    options: .options(
-        disableSynthesizedResourceAccessors: true
-    ),
-    settings: .settings(base: [
-        "ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": true
-    ]),
     targets: [
         .target(
             name: "TuistDemoApp",

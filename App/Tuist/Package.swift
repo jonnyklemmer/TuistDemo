@@ -5,13 +5,7 @@ import PackageDescription
     import struct ProjectDescription.PackageSettings
 
     let packageSettings = PackageSettings(
-        productTypes: [:],
-        baseSettings: .settings(base: [
-            "ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": true
-        ]),
-        projectOptions: [
-            "TuistDemoFramework": .options(disableSynthesizedResourceAccessors: true),
-        ]
+        productTypes: [:]
     )
 #endif
 

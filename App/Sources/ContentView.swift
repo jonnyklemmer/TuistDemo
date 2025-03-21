@@ -5,8 +5,12 @@ public struct ContentView: View {
     public init() {}
 
     public var body: some View {
-//        ImageHolderView()
-        Image(.happyCoffee)
+        ScrollView {
+            VStack {
+                ImageHolderView()
+                Image(.happyCactus)
+            }
+        }
     }
 }
 
